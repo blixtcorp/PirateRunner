@@ -470,7 +470,7 @@ MonoBehaviour:
   - {fileID: 1447565640}
   paths:
   - {fileID: 8039037336339308248, guid: 08712bfae786d424fa910c8bd3918f5d, type: 3}
-  moveIncrement: 10
+  moveIncrement: 2
   startTimeBtwSpawn: 0.5
   whatIsPath:
     serializedVersion: 2

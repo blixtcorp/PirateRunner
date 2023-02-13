@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PathGenerator : MonoBehaviour
 {
-    public Transform[] startingPositions;
+    public Transform[] startingPositions; // Possible starting positions for path generation
     public Transform[] extremePoints; // max min values for x and y
-    private float minX, maxX, minY, maxY;
-    public GameObject[] paths;
+    private float minX, maxX, minY, maxY; 
+    public GameObject[] paths; // Array of objects that can be spawned on the 'path'
 
     private int direction;
     private bool stopGeneration;
@@ -16,7 +16,7 @@ public class PathGenerator : MonoBehaviour
     private float timeBtwSpawn;
     public float startTimeBtwSpawn;
 
-    public LayerMask whatIsPath;
+    public LayerMask whatIsPath; 
 
     private void Start()
     {
@@ -50,8 +50,7 @@ public class PathGenerator : MonoBehaviour
     {
 
         if (direction == 1 || direction == 2)
-        { // Move right !
-            // change this to account for whatever
+        { // Move pathgenerator to the right
             if (transform.position.x < maxX)
             {
                 Vector2 pos = new Vector2(transform.position.x + moveIncrement, transform.position.y);
@@ -59,7 +58,7 @@ public class PathGenerator : MonoBehaviour
 
                 randomPathObject();
 
-                // Makes sure the level generator doesn't move left !
+                // Makes sure the pathgenerator doesn't move left
                 direction = Random.Range(1, 6);
                 if (direction == 3)
                 {
@@ -75,8 +74,7 @@ public class PathGenerator : MonoBehaviour
             }
         }
         else if (direction == 3 || direction == 4)
-        { // Move left !
-           // Check this position later
+        { // Move pathgenerator to the left
             if (transform.position.x > minX)
             {
                 Vector2 pos = new Vector2(transform.position.x - moveIncrement, transform.position.y);
@@ -91,11 +89,10 @@ public class PathGenerator : MonoBehaviour
             }
         }
         else if (direction == 5)
-        { // MoveDown
-        // double check position later
-            if (transform.position.y > minY)
+        { // Move pathgenerator upwards
+            if (transform.position.y < maxY)
             {
-                Vector2 pos = new Vector2(transform.position.x, transform.position.y - moveIncrement);
+                Vector2 pos = new Vector2(transform.position.x, transform.position.y + moveIncrement);
                 transform.position = pos;
 
                 randomPathObject();
