@@ -8,9 +8,10 @@ public class PathGenerator : MonoBehaviour
     public Transform[] extremePoints; // max min values for x and y
     private float minX, maxX, minY, maxY; 
     public GameObject[] paths; // Array of objects that can be spawned on the 'path'
+    public GameObject[] obstacles; // Array of obstacles that can be spawned where there is no path
 
     private int direction;
-    private bool stopGeneration;
+    public bool stopGeneration;
 
     public float moveIncrement;
     private float timeBtwSpawn;
@@ -26,7 +27,7 @@ public class PathGenerator : MonoBehaviour
         randomPathObject();
 
         // Is this necessary?
-        direction = Random.Range(1, 6);
+        direction = Random.Range(1, 7);
 
         minX = extremePoints[0].position.x;
         maxX = extremePoints[1].position.x;
@@ -39,6 +40,7 @@ public class PathGenerator : MonoBehaviour
         if (timeBtwSpawn <= 0 && stopGeneration == false)
         {
             Move();
+            Debug.Log(direction);
             timeBtwSpawn = startTimeBtwSpawn;
         }
         else {
@@ -59,7 +61,7 @@ public class PathGenerator : MonoBehaviour
                 randomPathObject();
 
                 // Makes sure the pathgenerator doesn't move left
-                direction = Random.Range(1, 6);
+                /*direction = Random.Range(1, 7);
                 if (direction == 3)
                 {
                     direction = 1;
@@ -67,7 +69,8 @@ public class PathGenerator : MonoBehaviour
                 else if (direction == 4)
                 {
                     direction = 5;
-                }
+                }*/
+                direction = 5;
             }
             else {
                 direction = 5;
@@ -82,13 +85,14 @@ public class PathGenerator : MonoBehaviour
 
                 randomPathObject();
 
-                direction = Random.Range(3, 6);
+                //direction = Random.Range(3, 7);
+                direction = 5;
             }
             else {
                 direction = 5;
             }
         }
-        else if (direction == 5)
+        else if (direction == 5 || direction == 6)
         { // Move pathgenerator upwards
             if (transform.position.y < maxY)
             {
@@ -97,7 +101,7 @@ public class PathGenerator : MonoBehaviour
 
                 randomPathObject();
 
-                direction = Random.Range(1, 6);
+                direction = Random.Range(1, 7);
             }
             else {
                 stopGeneration = true;
