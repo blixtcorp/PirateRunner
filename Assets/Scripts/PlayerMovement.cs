@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float rotationSpeed;
 
+    public float score;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +37,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    public void OnTriggerEnter(Collider other)
     {
-        //rb.velocity = movementDirection * movementSpeed;
+        if (other.tag == "TrashBlue")
+        {
+            score += 1;
+            Destroy(other.gameObject);
+            Debug.Log(score);
+        }
+        else if (other.tag == "TrashGreen")
+        {
+            score += 3;
+            Destroy(other.gameObject);
+            Debug.Log(score);
+        }
+        else if (other.tag == "TrashPurple")
+        {
+            score += 5;
+            Destroy(other.gameObject);
+            Debug.Log(score);
+        }
+        Debug.Log(score);
+
     }
 }
