@@ -19,14 +19,22 @@ public class PathGenerator : MonoBehaviour
 
     public LayerMask whatIsPath; 
 
+    public Vector3 startPos;
+
     private void Start()
     {
-        // Change to boat position in future
-        int randStartingPos = Random.Range(0, startingPositions.Length);
-        transform.position = startingPositions[randStartingPos].position;
+        // If there's no previous chunk, generate a random starting position, 
+        // otherwise make use of the previous chunk's finishing position
+        if (startPos == new Vector3(0,0,0)) {
+            int randStartingPos = Random.Range(0, startingPositions.Length);
+            transform.position = startingPositions[randStartingPos].position;
+        } else {
+            transform.position = startPos;
+        }
+        
         randomPathObject();
 
-        // Is this necessary?
+        // Random direction for the path generator
         direction = Random.Range(1, 7);
 
         minX = extremePoints[0].position.x;
@@ -40,7 +48,6 @@ public class PathGenerator : MonoBehaviour
         if (timeBtwSpawn <= 0 && stopGeneration == false)
         {
             Move();
-            Debug.Log(direction);
             timeBtwSpawn = startTimeBtwSpawn;
         }
         else {
