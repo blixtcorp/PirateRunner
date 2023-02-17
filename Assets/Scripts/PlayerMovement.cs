@@ -39,13 +39,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Trash")
+        if (other.tag == "TrashBlue")
         {
             score += 1;
             Destroy(other.gameObject);
             Debug.Log(score);
         }
-
+        else if (other.tag == "TrashGreen")
+        {
+            score += 3;
+            Destroy(other.gameObject);
+            Debug.Log(score);
+        }
+        else if (other.tag == "TrashPurple")
+        {
+            score += 5;
+            Destroy(other.gameObject);
+            Debug.Log(score);
+        }
+        Debug.Log(score);
 
     }
 }
