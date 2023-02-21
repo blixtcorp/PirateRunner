@@ -6,13 +6,18 @@ public class SpawnObstacle : MonoBehaviour
 {
     public LayerMask whatIsPath;
     public PathGenerator pathGen;
+    private bool isDone = false;
 
     void Update() {
-        Collider2D pathDetection = Physics2D.OverlapCircle(transform.position, 1, whatIsPath);
-        if (pathDetection == null && pathGen.stopGeneration == true) { // No path blocking our way, spawn obstacle
+        Collider[] pathsDetected = Physics.OverlapBox(transform.position, new Vector3(1,1,1), Quaternion.identity, whatIsPath);
+        if (pathsDetected.Length == 0 && pathGen.stopGeneration == true && !isDone) { // No path blocking our way, spawn obstacle
             int rand = Random.Range(0, pathGen.obstacles.Length);
-            Instantiate(pathGen.obstacles[rand], transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Instantiate(pathGen.obstacles[rand], transform.position, Quaternion.identity, this.transform);
+            //Destroy(gameObject);
+            isDone = true;
+        } else if (pathsDetected.Length > 0) { // Path blocking our way, no need to spawn obstacle
+            //Destroy(gameObject);
+            isDone = true;
         }
     }
 }

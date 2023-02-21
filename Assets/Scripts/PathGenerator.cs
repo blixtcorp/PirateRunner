@@ -20,6 +20,7 @@ public class PathGenerator : MonoBehaviour
     public LayerMask whatIsPath; 
 
     public Vector3 startPos;
+    public Vector3 endPos;
 
     private void Start()
     {
@@ -110,15 +111,16 @@ public class PathGenerator : MonoBehaviour
 
                 direction = Random.Range(1, 7);
             }
-            else {
+            else { // finished generating
                 stopGeneration = true;
+                endPos = transform.position;
             }
         }
     }
 
     private void randomPathObject() {
         int randPathObject = Random.Range(0, paths.Length);
-        Instantiate(paths[randPathObject], transform.position, Quaternion.identity);
+        Instantiate(paths[randPathObject], transform.position, Quaternion.identity, this.transform);
     }
 }
 

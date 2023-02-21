@@ -246,8 +246,9 @@ MonoBehaviour:
   - {fileID: 8436258698319390220}
   - {fileID: 8436258698114491227}
   paths:
-  - {fileID: 8039037336339308248, guid: 08712bfae786d424fa910c8bd3918f5d, type: 3}
-  - {fileID: 1203032072970423292, guid: 70ec773f038a9094a8d5d314f6a635a6, type: 3}
+  - {fileID: 2895416220398644230, guid: 75b55675b5450461c929d3e2896cf7fc, type: 3}
+  - {fileID: 3210830597528978797, guid: c9f717e93b6084ea9b36aee7239138e9, type: 3}
+  - {fileID: 8274635641201848871, guid: 0242cde5c7f0c4cf89402ec565325f34, type: 3}
   obstacles:
   - {fileID: 2142394014777140305, guid: aba80f162904d404383cde968e2fa798, type: 3}
   stopGeneration: 0
@@ -410,7 +411,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8436258697944064239}
-  - component: {fileID: 8436258697944064238}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -435,21 +435,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8436258697944064238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8436258697944064232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a689fe3779f0f2741b841025765ee65b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathGen: {fileID: 8436258697606881274}
-  nextChunk: {fileID: 0}
-  isDone: 0
 --- !u!1 &8436258697977066619
 GameObject:
   m_ObjectHideFlags: 0
