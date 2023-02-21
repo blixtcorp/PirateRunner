@@ -10,6 +10,8 @@ public class PathGenerator : MonoBehaviour
     public GameObject[] paths; // Array of objects that can be spawned on the 'path'
     public GameObject[] obstacles; // Array of obstacles that can be spawned where there is no path
 
+    private List<GameObject> pathChildren = new List<GameObject>(); // List containing instanciated children
+
     private int direction;
     public bool stopGeneration;
 
@@ -53,6 +55,13 @@ public class PathGenerator : MonoBehaviour
         }
         else {
             timeBtwSpawn -= Time.deltaTime;
+        }
+
+        if (stopGeneration) { // Makes all paths children of the pathgenerator gameobject. This is to later efficently be able to delete everything at once.
+            foreach (GameObject pc in pathChildren) {
+                if (pc == null) {break;}
+                pc.transform.parent = transform;
+            }
         }
     }
 
@@ -120,7 +129,8 @@ public class PathGenerator : MonoBehaviour
 
     private void randomPathObject() {
         int randPathObject = Random.Range(0, paths.Length);
-        Instantiate(paths[randPathObject], transform.position, Quaternion.identity, this.transform);
+        GameObject pathChild = Instantiate(paths[randPathObject], transform.position, Quaternion.identity);
+        pathChildren.Add(pathChild);
     }
 }
 
