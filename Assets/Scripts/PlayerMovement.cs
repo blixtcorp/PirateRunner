@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log(score);
         }
         else if (other.tag == "Island"){
-             SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
+            PlayerPrefs.SetFloat("score", score);
         }
         Debug.Log(score);
 
