@@ -26,7 +26,7 @@ public class NewGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         
     }
 
-    public void click()
+    public void click_play()
     {
         canvas.SetActive(false);
         Time.timeScale = 1;
