@@ -7,6 +7,7 @@ TagManager:
   - TrashBlue
   - TrashGreen
   - TrashPurple
+  - Island
   layers:
   - Default
   - TransparentFX

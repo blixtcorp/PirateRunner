@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     public float score;
-
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }
-
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "TrashBlue")
@@ -56,6 +56,9 @@ public class PlayerMovement : MonoBehaviour
             score += 5;
             Destroy(other.gameObject);
             Debug.Log(score);
+        }
+        else if (other.tag == "Island"){
+             SceneManager.LoadScene(1);
         }
         Debug.Log(score);
 
