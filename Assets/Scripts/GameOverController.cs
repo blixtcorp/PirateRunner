@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
 public class GameOverController : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class GameOverController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score.text = PlayerPrefs.GetFloat("score").ToString();
-
+        score.text = "Score: " + PlayerPrefs.GetFloat("score").ToString();
 
     }
 
+    public void RestartButton(){
+        SceneManager.LoadScene(0);
+    }
     // Update is called once per frame
     void Update()
     {
