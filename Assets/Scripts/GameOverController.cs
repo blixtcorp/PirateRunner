@@ -16,7 +16,7 @@ public class GameOverController : MonoBehaviour
     }
 
     public void RestartButton(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void MainMenuButton(){
