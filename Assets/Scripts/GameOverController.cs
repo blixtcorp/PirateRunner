@@ -18,6 +18,10 @@ public class GameOverController : MonoBehaviour
     public void RestartButton(){
         SceneManager.LoadScene(0);
     }
+
+    public void MainMenuButton(){
+        SceneManager.LoadScene(3);
+    }
     // Update is called once per frame
     void Update()
     {
