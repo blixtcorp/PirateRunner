@@ -48,6 +48,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697422061149
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +97,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697506892203
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +146,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697508206134
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +195,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697606881275
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,11 +255,10 @@ MonoBehaviour:
   - {fileID: 8274635641201848871, guid: 0242cde5c7f0c4cf89402ec565325f34, type: 3}
   - {fileID: 7251641938996821394, guid: b64e7d6fc7171f547b5615033886ec26, type: 3}
   obstacles:
-  - {fileID: 2142394014777140305, guid: aba80f162904d404383cde968e2fa798, type: 3}
   - {fileID: 7172273697408492474, guid: 57f17d4768dfc4578ba188a5494fff97, type: 3}
   stopGeneration: 0
   moveIncrement: 2
-  startTimeBtwSpawn: 0.5
+  startTimeBtwSpawn: 0
   whatIsPath:
     serializedVersion: 2
     m_Bits: 64
@@ -309,6 +312,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697883547641
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +361,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697919948716
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +410,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258697944064232
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8436258697944064239}
+  - component: {fileID: 5929919505165629985}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -438,6 +445,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5929919505165629985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436258697944064232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b024827ee7f2c45825c3dc4173f575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eligibleChildren: []
 --- !u!1 &8436258697977066619
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +506,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698032449232
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +555,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698114491220
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +604,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698194016279
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +653,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698319390221
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +702,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698359135189
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +751,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698376960756
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +800,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698419722189
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +849,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698487861578
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +898,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698526422780
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +947,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698591142658
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +996,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698747546410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1045,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698819247272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1094,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258698868599476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1143,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258699142770031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1192,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258699145931373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1241,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258699183011266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1346,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
 --- !u!1 &8436258699331220779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,3 +1395,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pathGen: {fileID: 8436258697606881274}
+  isEligible: 0
