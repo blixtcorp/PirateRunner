@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.SceneManagement; 
 
 public class NewGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
@@ -34,6 +35,7 @@ public class NewGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1;
         Debug.Log("clicked play");
+        SceneManager.LoadScene(2);
     }
 
     public void click_exit()

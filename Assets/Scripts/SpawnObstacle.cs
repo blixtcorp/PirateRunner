@@ -13,10 +13,8 @@ public class SpawnObstacle : MonoBehaviour
         if (pathsDetected.Length == 0 && pathGen.stopGeneration == true && !isDone) { // No path blocking our way, spawn obstacle
             int rand = Random.Range(0, pathGen.obstacles.Length);
             Instantiate(pathGen.obstacles[rand], transform.position, Quaternion.identity, this.transform);
-            //Destroy(gameObject);
             isDone = true;
         } else if (pathsDetected.Length > 0) { // Path blocking our way, no need to spawn obstacle
-            //Destroy(gameObject);
             isDone = true;
         }
     }

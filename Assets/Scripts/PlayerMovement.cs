@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
+    [SerializeField] public float movementSpeed;
     private Rigidbody rb;
     private Vector2 movementDirection;
 

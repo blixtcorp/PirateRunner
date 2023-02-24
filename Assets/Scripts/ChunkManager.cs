@@ -10,22 +10,31 @@ public class ChunkManager : MonoBehaviour
     public float chunkDistanceBehind = 20f;
 
     public Transform playerTransform;
+    public PlayerMovement pm;
     private float lastGeneratedY;
     private List<GameObject> chunks = new List<GameObject>();
 
     void Start()
     {
-        lastGeneratedY = playerTransform.position.y + chunkSize;
+        lastGeneratedY = playerTransform.position.y + chunkSize + 10f;
         GenerateChunks(Vector3.zero);
     }
 
     void Update()
     {
-        if (playerTransform.position.y >= lastGeneratedY + chunkSize)
+        if (playerTransform.position.y >= lastGeneratedY - numChunksAhead * chunkSize)
         {
-            lastGeneratedY = playerTransform.position.y;
+            //lastGeneratedY = playerTransform.position.y;
+
             Transform pathGenTransform = chunks[chunks.Count - 1].transform.Find("PathGenerator");
+            if (pathGenTransform == null) { Debug.Log("pathGenTransform is null"); }
+
             PathGenerator pathGenerator = pathGenTransform.GetComponent<PathGenerator>();
+            if (pathGenerator == null) { Debug.Log("pathGenerator is null"); }
+
+            //while (!pathGenerator.stopGeneration) {} // wait until previous chunk is done generating
+            //StartCoroutine(WaitUntilStopGeneration(pathGenerator));
+            pm.movementSpeed += 0.5f;
             GenerateChunks(pathGenerator.endPos);
         }
 
@@ -34,12 +43,14 @@ public class ChunkManager : MonoBehaviour
 
     void GenerateChunks(Vector3 startPosition)
     {
-        float startHeight = lastGeneratedY;
-
+        //float startHeight = lastGeneratedY;
         for (int i = 0; i < numChunksAhead + 1; i++)
         {
-            float chunkY = startHeight + i * chunkSize;
-            Vector3 chunkPos = new Vector3(0f, chunkY, 0f);
+            //float chunkY = startHeight + i * chunkSize;
+            //Vector3 chunkPos = new Vector3(0f, chunkY, 0f);
+            
+            Vector3 chunkPos = new Vector3(0f, lastGeneratedY, 0f);
+            lastGeneratedY += chunkSize;
 
             GameObject chunk = Instantiate(chunkPrefab, chunkPos, Quaternion.identity);
             chunks.Add(chunk);
@@ -48,7 +59,11 @@ public class ChunkManager : MonoBehaviour
             PathGenerator pathGenerator = pathGenTransform.GetComponent<PathGenerator>();
             
             pathGenerator.startPos = startPosition;
-            startPosition = pathGenerator.endPos;
+            //startPosition = pathGenerator.endPos;
+            startPosition = pathGenerator.transform.TransformPoint(Vector3.zero);
+
+            //while (!pathGenerator.stopGeneration) {} // wait until chunk is done generating
+            //StartCoroutine(WaitUntilStopGeneration(pathGenerator));
         }
     }
 
@@ -67,5 +82,14 @@ public class ChunkManager : MonoBehaviour
         {
             chunks.Remove(chunk);
         }
+    }
+
+    IEnumerator WaitUntilStopGeneration(PathGenerator pathGenerator) {
+        while (!pathGenerator.stopGeneration) {
+          yield return new WaitForEndOfFrame();
+          Debug.Log("loading");
+        }
+        Debug.Log("Freedom");
+        // Do something once path generation has stopped
     }
 }

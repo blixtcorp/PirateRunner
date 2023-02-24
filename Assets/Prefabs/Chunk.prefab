@@ -249,15 +249,18 @@ MonoBehaviour:
   - {fileID: 2895416220398644230, guid: 75b55675b5450461c929d3e2896cf7fc, type: 3}
   - {fileID: 3210830597528978797, guid: c9f717e93b6084ea9b36aee7239138e9, type: 3}
   - {fileID: 8274635641201848871, guid: 0242cde5c7f0c4cf89402ec565325f34, type: 3}
+  - {fileID: 7251641938996821394, guid: b64e7d6fc7171f547b5615033886ec26, type: 3}
   obstacles:
   - {fileID: 2142394014777140305, guid: aba80f162904d404383cde968e2fa798, type: 3}
+  - {fileID: 7172273697408492474, guid: 57f17d4768dfc4578ba188a5494fff97, type: 3}
   stopGeneration: 0
   moveIncrement: 2
-  startTimeBtwSpawn: 0
+  startTimeBtwSpawn: 0.5
   whatIsPath:
     serializedVersion: 2
     m_Bits: 64
   startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
 --- !u!1 &8436258697658206634
 GameObject:
   m_ObjectHideFlags: 0

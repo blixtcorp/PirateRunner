@@ -29,30 +29,32 @@ public class PathGenerator : MonoBehaviour
         // If there's no previous chunk, generate a random starting position, 
         // otherwise make use of the previous chunk's finishing position
         if (startPos == new Vector3(0,0,0)) {
+            Debug.Log("no previous starting pos: " + startPos);
             int randStartingPos = Random.Range(0, startingPositions.Length);
             transform.position = startingPositions[randStartingPos].position;
-        } else {
+        } 
+        else {
+            Debug.Log("Given starting pos: " + startPos);
             transform.position = startPos;
         }
         
-        randomPathObject();
-
-        // Random direction for the path generator
-        direction = Random.Range(1, 7);
-
         minX = extremePoints[0].position.x;
         maxX = extremePoints[1].position.x;
         minY = extremePoints[0].position.y;
         maxY = extremePoints[1].position.y;
+
+        randomPathObject();
+
+        // Random direction for the path generator
+        direction = Random.Range(1, 7);
     }
 
     private void Update()
     {
-        if (timeBtwSpawn <= 0 && stopGeneration == false)
-        {
+        if (timeBtwSpawn <= 0 && stopGeneration == false) {
             Move();
             timeBtwSpawn = startTimeBtwSpawn;
-        }
+        } 
         else {
             timeBtwSpawn -= Time.deltaTime;
         }
@@ -65,54 +67,27 @@ public class PathGenerator : MonoBehaviour
         }
     }
 
-    private void Move()
-    {
-
-        if (direction == 1 || direction == 2)
-        { // Move pathgenerator to the right
-            if (transform.position.x < maxX)
-            {
+    private void Move() {
+        if (direction == 1 || direction == 2) { // Move pathgenerator to the right
+            if (transform.position.x < maxX) {
                 Vector2 pos = new Vector2(transform.position.x + moveIncrement, transform.position.y);
                 transform.position = pos;
 
                 randomPathObject();
-
-                // Makes sure the pathgenerator doesn't move left
-                /*direction = Random.Range(1, 7);
-                if (direction == 3)
-                {
-                    direction = 1;
-                }
-                else if (direction == 4)
-                {
-                    direction = 5;
-                }*/
-                direction = 5;
             }
-            else {
-                direction = 5;
-            }
-        }
-        else if (direction == 3 || direction == 4)
-        { // Move pathgenerator to the left
-            if (transform.position.x > minX)
-            {
+            direction = 5;
+        } 
+        else if (direction == 3 || direction == 4) { // Move pathgenerator to the left
+            if (transform.position.x > minX) {
                 Vector2 pos = new Vector2(transform.position.x - moveIncrement, transform.position.y);
                 transform.position = pos;
 
                 randomPathObject();
-
-                //direction = Random.Range(3, 7);
-                direction = 5;
             }
-            else {
-                direction = 5;
-            }
+            direction = 5;
         }
-        else if (direction == 5 || direction == 6)
-        { // Move pathgenerator upwards
-            if (transform.position.y < maxY)
-            {
+        else if (direction == 5 || direction == 6) { // Move pathgenerator upwards
+            if (transform.position.y < maxY) {
                 Vector2 pos = new Vector2(transform.position.x, transform.position.y + moveIncrement);
                 transform.position = pos;
 
