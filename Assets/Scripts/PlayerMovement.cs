@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        score = 0;
     }
 
     // Update is called once per frame
@@ -42,18 +42,21 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "TrashBlue")
         {
             score += 1;
+            ScoreHandler.increaseScore(1);
             Destroy(other.gameObject);
             Debug.Log(score);
         }
         else if (other.tag == "TrashGreen")
         {
             score += 3;
+            ScoreHandler.increaseScore(3);
             Destroy(other.gameObject);
             Debug.Log(score);
         }
         else if (other.tag == "TrashPurple")
         {
             score += 5;
+            ScoreHandler.increaseScore(5);
             Destroy(other.gameObject);
             Debug.Log(score);
         }
