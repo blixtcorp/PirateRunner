@@ -35,6 +35,7 @@ public class ChunkManager : MonoBehaviour
             //while (!pathGenerator.stopGeneration) {} // wait until previous chunk is done generating
             //StartCoroutine(WaitUntilStopGeneration(pathGenerator));
             pm.movementSpeed += 0.3f;
+            pm.rotationSpeed += 400f;
             GenerateChunks(pathGenerator.endPos);
         }
 

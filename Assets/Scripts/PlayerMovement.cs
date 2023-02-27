@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector2 movementDirection;
 
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] public float rotationSpeed;
 
     public float score;
 
@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(1);
             PlayerPrefs.SetFloat("score", score);
         }
+        
         Debug.Log(score);
 
     }

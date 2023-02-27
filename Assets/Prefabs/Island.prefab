@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7172273697408492469}
   - component: {fileID: 7172273697408492468}
-  - component: {fileID: 7172273697408492475}
+  - component: {fileID: 6862683800633822268}
   m_Layer: 0
   m_Name: Island
   m_TagString: Island
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7172273697408492474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0, z: 0}
+  m_LocalPosition: {x: -0.531, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &7172273697408492475
+--- !u!65 &6862683800633822268
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,5 +96,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.361787, y: 14.723568, z: 0.2}
-  m_Center: {x: 3.7047772, y: 0.0000011920929, z: 0}
+  m_Size: {x: 14.219398, y: 13.634356, z: 0.2}
+  m_Center: {x: 3.0348663, y: 0.18282503, z: 0}
