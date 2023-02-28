@@ -23,6 +23,10 @@ public class ScoreDisplay : MonoBehaviour
 
         highScore = PlayerPrefs.GetInt(key, 0);
 
+        
+        //scoreDisp.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
+        //highScoreDisp.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
+
     }
 
     // Update is called once per frame

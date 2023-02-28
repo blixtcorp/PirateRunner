@@ -11,13 +11,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public float rotationSpeed;
 
-    public float score;
+    public int score = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         score = 0;
+        ScoreHandler.resetScore();
     }
 
     // Update is called once per frame
@@ -42,21 +43,21 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "TrashBlue")
         {
             score += 1;
-            ScoreHandler.increaseScore(1);
+            ScoreHandler.setScore(score);
             Destroy(other.gameObject);
             Debug.Log(score);
         }
         else if (other.tag == "TrashGreen")
         {
             score += 3;
-            ScoreHandler.increaseScore(3);
+            ScoreHandler.setScore(score);
             Destroy(other.gameObject);
             Debug.Log(score);
         }
         else if (other.tag == "TrashPurple")
         {
             score += 5;
-            ScoreHandler.increaseScore(5);
+            ScoreHandler.setScore(score);
             Destroy(other.gameObject);
             Debug.Log(score);
         }
