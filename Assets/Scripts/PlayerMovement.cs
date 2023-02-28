@@ -25,8 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        movementDirection = new Vector2(horizontalInput, verticalInput + 1);
+        movementDirection = new Vector2(horizontalInput, 1);
         float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
         //movementDirection.Normalize();
         transform.Translate(movementDirection * movementSpeed * inputMagnitude * Time.deltaTime, Space.World);
