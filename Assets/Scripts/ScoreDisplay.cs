@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    private int score;
+    private int score = 0;
 
     private int highScore;
     private string key = "HighScore";
