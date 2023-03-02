@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public float rotationSpeed;
 
+    public float leftEdge;
+    public float rightEdge;
+
     public int score = 0;
 
     // Start is called before the first frame update
@@ -27,8 +30,14 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         movementDirection = new Vector2(horizontalInput, 1);
         float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
-        //movementDirection.Normalize();
+        
         transform.Translate(movementDirection * movementSpeed * inputMagnitude * Time.deltaTime, Space.World);
+
+        // Move the player horizontally but make sure it doesn't leave the game edges
+        Vector3 horizontalMovement = new Vector3(movementDirection.x, 0f, 0f);
+        Vector3 newPosition = transform.position + horizontalMovement * movementSpeed * inputMagnitude * Time.deltaTime;
+        newPosition.x = Mathf.Clamp(newPosition.x, leftEdge, rightEdge);
+        transform.position = newPosition;
 
         if (movementDirection != Vector2.zero)
         {
