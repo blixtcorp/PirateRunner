@@ -60,6 +60,13 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log(score);
         }
+        else if (other.tag == "Trashcan ")
+        {
+            score += 10;
+            ScoreHandler.setScore(score);
+            Destroy(other.gameObject);
+            Debug.Log(score);
+        }
         else if (other.tag == "Island"){
             SceneManager.LoadScene(1);
             PlayerPrefs.SetFloat("score", score);
