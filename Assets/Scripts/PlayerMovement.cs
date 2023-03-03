@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log(score);
         }
-        else if (other.tag == "Trashcan ")
+        else if (other.tag == "Trash")
         {
             score += 10;
             ScoreHandler.setScore(score);

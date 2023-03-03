@@ -9,6 +9,7 @@ TagManager:
   - TrashPurple
   - Island
   - Trashcan
+  - Trash
   layers:
   - Default
   - TransparentFX

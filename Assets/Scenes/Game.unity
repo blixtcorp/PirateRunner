@@ -1183,11 +1183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5575035901870735222, guid: cf0a8acf51c7148ad8d99f8d36c5e78d, type: 3}
       propertyPath: leftEdge
-      value: -2.6
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 5575035901870735222, guid: cf0a8acf51c7148ad8d99f8d36c5e78d, type: 3}
       propertyPath: rightEdge
-      value: 6.1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5575035901870735223, guid: cf0a8acf51c7148ad8d99f8d36c5e78d, type: 3}
       propertyPath: m_Name
@@ -1214,5 +1214,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5713f1f7b2c184cfda9319a317a21931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2089274880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089274876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c51da0f82e0de149a39c50a114484c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
