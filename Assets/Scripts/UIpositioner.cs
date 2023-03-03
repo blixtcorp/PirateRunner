@@ -7,6 +7,7 @@ public class UIpositioner : MonoBehaviour
 
     public GameObject player;
     public GameObject[] bottles;
+    private int offset = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,8 @@ public class UIpositioner : MonoBehaviour
     {
         foreach(GameObject bottle in bottles)
         {
-            int offset = 10;
-            bottle.transform.position = new Vector3(transform.position.x-offset, player.transform.position.y, transform.position.z);
+            offset += 3;
+            bottle.transform.position = new Vector3(transform.position.x, player.transform.position.y+offset, transform.position.z);
         }
         
     }
